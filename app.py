@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";	
 	
-// ── API base (adjust for production) ─────────────────────────	
+# ── API base (adjust for production) ─────────────────────────	
 const API = "http://localhost:8000/api";	
 	
-// ── Palette & design tokens ───────────────────────────────────	
-// Deep navy base, electric indigo accent, slate neutrals	
-// Signature: a live status ticker ribbon across the top	
+# ── Palette & design tokens ───────────────────────────────────	
+# Deep navy base, electric indigo accent, slate neutrals	
+# Signature: a live status ticker ribbon across the top	
 	
 const STAGE_META = {	
   scraped:    { label: "Scraped",       color: "#64748b", bg: "#f1f5f9" },	
@@ -19,7 +19,7 @@ const STAGE_META = {
 	
 const STAGES = Object.keys(STAGE_META);	
 	
-// ── Utility helpers ────────────────────────────────────────────	
+# ── Utility helpers ────────────────────────────────────────────	
 	
 function ago(iso) {	
   if (!iso) return "—";	
@@ -39,7 +39,7 @@ async function apiFetch(path, opts = {}) {
   return res.json();	
 }	
 	
-// ── Shared micro-components ────────────────────────────────────	
+# ── Shared micro-components ────────────────────────────────────	
 	
 function StageBadge({ stage }) {	
   const m = STAGE_META[stage] || { label: stage, color: "#64748b", bg: "#f1f5f9" };	
@@ -85,7 +85,7 @@ function EmptyState({ icon, message }) {
   );	
 }	
 	
-// ── Launch Job Modal ───────────────────────────────────────────	
+# ── Launch Job Modal ───────────────────────────────────────────	
 	
 function LaunchModal({ onClose, onLaunched }) {	
   const [city, setCity] = useState("");	
@@ -173,7 +173,7 @@ function LaunchModal({ onClose, onLaunched }) {
   );	
 }	
 	
-// ── Pipeline Kanban ────────────────────────────────────────────	
+# ── Pipeline Kanban ────────────────────────────────────────────	
 	
 function PipelineView({ onSelectLead }) {	
   const [leads, setLeads] = useState([]);	
@@ -254,7 +254,7 @@ function PipelineView({ onSelectLead }) {
   );	
 }	
 	
-// ── Activity Feed ──────────────────────────────────────────────	
+# ── Activity Feed ──────────────────────────────────────────────	
 	
 function ActivityFeedView() {	
   const [events, setEvents] = useState([]);	
@@ -301,7 +301,7 @@ function ActivityFeedView() {
   );	
 }	
 	
-// ── Inbox View ─────────────────────────────────────────────────	
+# ── Inbox View ─────────────────────────────────────────────────	
 	
 function InboxView({ onSelectLead }) {	
   const [threads, setThreads] = useState([]);	
@@ -443,7 +443,7 @@ function InboxView({ onSelectLead }) {
   );	
 }	
 	
-// ── Jobs Monitor ───────────────────────────────────────────────	
+# ── Jobs Monitor ───────────────────────────────────────────────	
 	
 function JobsView() {	
   const [jobs, setJobs] = useState([]);	
@@ -493,7 +493,7 @@ function JobsView() {
   );	
 }	
 	
-// ── Lead Detail Drawer ─────────────────────────────────────────	
+# ── Lead Detail Drawer ─────────────────────────────────────────	
 	
 function LeadDrawer({ lead, onClose, onStageChange }) {	
   const [stage, setStage] = useState(lead.stage);	
@@ -590,7 +590,7 @@ function LeadDrawer({ lead, onClose, onStageChange }) {
   );	
 }	
 	
-// ── Stat Card ──────────────────────────────────────────────────	
+# ── Stat Card ──────────────────────────────────────────────────	
 	
 function StatCard({ label, value, sub, accent }) {	
   return (	
@@ -606,7 +606,7 @@ function StatCard({ label, value, sub, accent }) {
   );	
 }	
 	
-// ── Main App ───────────────────────────────────────────────────	
+# ── Main App ───────────────────────────────────────────────────	
 	
 export default function App() {	
   const [tab, setTab] = useState("pipeline");	
@@ -687,4 +687,4 @@ export default function App() {
       )}	
     </div>	
   );	
-}z	
+}
